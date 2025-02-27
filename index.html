@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rompecabezas de Fotos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="selection-screen">
+    <h1>Elige un Rompecabezas</h1>
+  
+    <div class="difficulty-selector">
+      <label for="difficulty">Dificultad:</label>
+      <select id="difficulty">
+        <option value="2">2x2 (Fácil)</option>
+        <option value="3" selected>3x3 (Normal)</option>
+        <option value="4">4x4 (Difícil)</option>
+      </select>
+    </div>
+
+    <div class="selection-container">
+      <div class="puzzle-option" data-image="foto/TofyWong.png">
+        <img src="foto/TofyWong.png" alt="Rompecabezas 1">
+        <button onclick="startPuzzle('foto/TofyWong.png')">Comenzar</button>
+      </div>
+      <div class="puzzle-option" data-image="foto/MotoTefy.jpg">
+        <img src="foto/MotoTefy.jpg" alt="Rompecabezas 2">
+        <button onclick="startPuzzle('foto/MotoTefy.jpg')">Comenzar</button>
+      </div>
+      <div class="puzzle-option" data-image="foto/TofyLima.png">
+        <img src="foto/TofyLima.png" alt="Rompecabezas 3">
+        <button onclick="startPuzzle('foto/TofyLima.png')">Comenzar</button>
+      </div>
+      <div class="puzzle-option" data-image="foto/Perrito.png">
+        <img src="foto/Perrito.png" alt="Rompecabezas 4">
+        <button onclick="startPuzzle('foto/Perrito.png')">Comenzar</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="puzzle-screen" style="display: none;">
+    <h1>Rompecabezas de Fotos</h1>
+    <div class="container">
+      <div id="puzzle-container"></div>
+      <div id="reference-container">
+        <img src="" alt="Referencia" id="reference-image">
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="btn-revolver" onclick="resetPuzzle()">Revolver</button>
+      <button class="btn-regresar" onclick="returnToMain()">Regresar</button>
+    </div>
+
+    <div id="confetti-container"></div>
+
+
+    <div id="congrats-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>¡Felicidades Boba!</h2>
+        <p>Has resuelto el rompecabezas correctamente 😎.</p>
+        <div class="modal-buttons">
+          <button class="btn-revolver" onclick="resetPuzzle()">Revolver</button>
+          <button class="btn-regresar" onclick="returnToMain()">Regresar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
